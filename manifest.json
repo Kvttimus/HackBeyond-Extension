@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3, 
+    "name": "Kids Nutrition Game", 
+    "version": "1.0.0", 
+    "description": "This is an extension to help kids learn about nutrition in a fun and dynamic way!",
+    "author": "Crystal Zhu & Amanda Li", 
+
+    "icon": "dogAvatar.png",
+
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "dogAvatar.png"
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content-script.js"],
+            "run_at": "document_idle"
+        }
+    ],    
+    "permissions": ["activeTab", "scripting", "storage", "tabs", "windows"],
+
+    "web_accessible_resources": [
+        {
+            "resources": ["dogAvatar.png", "dogAvatarHappy.png", "dogAvatarSad.png","modalIcon.png"],
+            "matches": ["http://*/*", "https://*/*"]
+        }
+    ]
+}   

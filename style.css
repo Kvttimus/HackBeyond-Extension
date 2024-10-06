@@ -1,0 +1,31 @@
+/*style of whole extension pop-up*/
+.waterLogBox {
+    /*box formatting*/
+    background-color: #03045E;
+    border: 5px solid #8385ff;
+    margin: 0 0;
+
+    /*text formatting*/
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    letter-spacing: 1px;
+}
+
+/*"record" button formatting*/
+#drinkButton {
+    margin-top: 5px;
+    background-color: white; 
+    color: black; 
+    padding: 5px 5px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+#drinkButton:hover { /* Hover effect */
+    background-color: #acc9ff; /* light blue on hover */
+}
