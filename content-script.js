@@ -77,19 +77,19 @@ const reminders = function() {
         let reminderMessage = "";
 
         if (totalWater < 0.5 || totalWater == undefined) { 
-            reminderInterval = 1000;  // 30 mins (0.5 hr)  //1800000
+            reminderInterval = 1800000;  // 30 mins (0.5 hr)
             reminderMessage = "HELP! NEED. WATER. NOW! 😭";
         }
         else if (totalWater < 1) {
-            reminderInterval = 5000;  // 120 mins (2 hr)  //7200000
+            reminderInterval = 7200000;  // 120 mins (2 hr)
             reminderMessage = "More water please";
         }
         else if (totalWater < 1.5) {
-            reminderInterval = 10000;  // 180 mins (3 hr)  //10800000
+            reminderInterval = 10800000;  // 180 mins (3 hr)
             reminderMessage = "We just need 1 more TEEENY TINY sip of water🌊";
         }
         else {
-            reminderInterval = 20000;  // 360 (6 hr) //10800000*2
+            reminderInterval = 21600000;  // 360 (6 hr)
             reminderMessage = "Remember to stay hydrated!🔥🔥";
         }
 
@@ -182,10 +182,10 @@ const changePetAvatar = function() {
         
         /*changing avator based on timeElapsed*/
         console.log("time elapsed: " + timeElapsed);
-        if (timeElapsed <= 0.25) {
+        if (timeElapsed <= 30) {
             petIconURL = chrome.runtime.getURL("dogAvatarHappy.png");
         }
-        else if (timeElapsed <= 1) {
+        else if (timeElapsed <= 120) {
             petIconURL = chrome.runtime.getURL("dogAvatarSad.png");
         }
         else {
@@ -213,7 +213,6 @@ const movePetAvatar = function() {
     if (!pet) return;  // ensure pet exists
 
     let changeDirThreshold_horizontal = 50;  // 50 pixels
-    //let changeDirThreshold_vertical = 110;  // 110 pixels
 
     // Set initial position if not already set
     if (!pet.style.left) pet.style.left = `${window.innerWidth - 140}px`;  // start mear right of screen
@@ -221,7 +220,6 @@ const movePetAvatar = function() {
 
     const petRect = pet.getBoundingClientRect();
     const screenWidth = window.innerWidth;
-    //const screenHeight = window.innerHeight;
 
     // check current pos & change dirs accordingly
     switch (dir) {
@@ -283,7 +281,6 @@ const dragPetAvatar = function() {
     document.addEventListener("mouseup", function() {
         if (isDragging) {
             isDragging = false;
-            
             newYValue = pet.getBoundingClientRect().top;
         }
     })
