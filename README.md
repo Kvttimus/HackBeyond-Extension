@@ -1,4 +1,7 @@
 # HackBeyond H2dOg Chrome Extension
+### Description
+H2DoG is a chrome extension geared towards children that reminds them to drink water at periodic intervals.
+
 
 ### Installation Instructions
 1. In a terminal, run `git clone https://github.com/Kvttimus/HackBeyond-H2dOg-Chrome-Extension`
